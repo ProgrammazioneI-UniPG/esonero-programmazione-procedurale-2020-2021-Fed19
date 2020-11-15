@@ -7,34 +7,38 @@ int main(void)
 {
   char M[128];
   char K[128];
-  char X[128];
-  char D[128];
+  char X[128];                                 //variabile risultato XOR
+  char D[128];                                 //variabile calcolo XOR
 
-  int a;
-  int b;
+  int a;                                       //Codice ASCII variabile M
+  int b;                                       //Codice ASCII variabile K
   int c;
-  int p;
+  int p;                                       //variabile opzione 1 o 2
   int lunm;
   int lunk;
   int casuale[128];
-  int f;
+  int f;                                       //cicli for
   time_t t;
-srand((unsigned)time(&t));
-system("clear");
+srand((unsigned)time(&t));                     //inizio funzione per generare numeri causali
+system("clear");                               //comando pulire schermo
   printf("\n");
   printf("       inserire codice M  ");
   fgets (M, 130, stdin);
   lunm=strlen(M)-1;
       if (lunm<128){
-                    goto fede2;
+                    goto fede2;                      //comando salto
                     }else {
                            while(getchar()!='\n');}
-  fede2:
+  fede2:                                             //etichetta salto
   printf("       inserisci chiave K ");
   fgets (K, 129, stdin);
   printf("***********************************************************************\n\n");
 fede1:
 lunk=strlen(K)-1;
+//printf("valore m %s",M);
+//printf ("  valore lunm %d",lunm);
+//printf("  valore k %s",K);
+//printf ("  valore lunk %d",lunk);
 if (lunm>lunk){
 fede3:
               printf("******     La chiave KEY K è minore del codice M          ******\n\n");
@@ -51,7 +55,7 @@ fede3:
               if (p==2){
                         printf("Codici ASCII generati ");
                         for(f=0;f<lunm;f++) {
-                        K[f]=rand()%128;
+                        K[f]=rand()%128;                      //genera chiave causale
                         printf("%d \\",K[f]);}
                         goto fede4;}
               if (p==3){
